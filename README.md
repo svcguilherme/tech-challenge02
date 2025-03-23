@@ -3,7 +3,7 @@
 ## 1. **Introdução**
 NNo cenário educacional atual, a falta de ferramentas adequadas dificulta a publicação e o compartilhamento de conteúdos educacionais de forma centralizada e acessível. A aplicação Escola Avanço foi desenvolvida para enfrentar esse desafio, permitindo que professores da rede pública publiquem aulas de maneira intuitiva e tecnológica, enquanto os alunos têm acesso fácil e organizado a esses materiais.
 
-A aplicação utiliza uma arquitetura baseada em microsserviços, implementada com Node.js, MongoDB, e comunicação via REST APIs. Além disso, conta com containerização via Docker e automação de CI/CD com GitHub Actions, garantindo um ambiente escalável e consistente.
+A aplicação utiliza uma arquitetura em MVC, implementada com Node.js, MongoDB, e comunicação via REST APIs. Além disso, conta com containerização via Docker e automação de CI/CD com GitHub Actions, garantindo um ambiente escalável e consistente.
 
 ---
 
@@ -60,21 +60,22 @@ A aplicação utiliza uma arquitetura baseada em microsserviços, implementada c
 ## 6. **Rotas Principais**
 
 ### **Usuários**
-| Método | Rota               | Descrição                     |
-|--------|--------------------|-------------------------------|
-| POST   | `/api/usuarios`    | Criar novo usuário            |
-| POST   | `/api/login`       | Autenticar usuário            |
-| GET    | `/api/usuarios`    | Listar todos os usuários      |
-| PUT    | `/api/usuarios/:id`| Atualizar um usuário          |
-| DELETE | `/api/usuarios/:id`| Remover um usuário            |
+| Método | Rota        | Descrição                | Permissões  |
+|--------|-------------|--------------------------|-------------|
+| POST   | `/usuarios` | Criar novo usuário       | Professores |
+| POST   | `/login`    | Autenticar usuário       | Aberto      |
+| GET    | `/usuarios` | Listar todos os usuários | Professores |
 
 ### **Aulas**
-| Método | Rota               | Descrição                     |
-|--------|--------------------|-------------------------------|
-| POST   | `/api/aulas`       | Criar nova aula               |
-| GET    | `/api/aulas`       | Listar todas as aulas         |
-| PUT    | `/api/aulas/:id`   | Atualizar uma aula            |
-| DELETE | `/api/aulas/:id`   | Deletar uma aula              |
+| Método | Rota                 | Descrição                           | Permissões           |
+|--------|----------------------|-------------------------------------|----------------------|
+| POST   | `/aulas`             | Criar nova aula                     | Professores          |
+| GET    | `aulas`              | Listar todas as aulas               | Professores          |
+| GET    | `aulas/principal`    | Listar as aulas da página principal | Professores e alunos |
+| GET    | `aulas/:id`          | Ler uma aula                        | Professores e alunos |
+| PUT    | `aulas/:id`          | Atualizar uma aula                  | Professores          |
+| DELETE | `aulas/:id`          | Deletar uma aula                    | Professores          |
+| GET    | `aulas/busca?termo=` | Buscar aula por palavra-chave       | Professores e alunos |
 
 ---
 
