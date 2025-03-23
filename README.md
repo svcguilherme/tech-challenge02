@@ -9,11 +9,10 @@ A aplicação utiliza uma arquitetura em MVC, implementada com Node.js, MongoDB,
 
 ## 2. **Funcionalidades**
 - **Usuários**
-  - Cadastro e autenticação de usuários (via JWT).
-  - Listagem, atualização e exclusão de usuários.
+  - Cadastro, autenticação (via JWT) e listagem de usuários.
 
 - **Aulas**
-  - Criação, listagem, atualização e exclusão de aulas.
+  - Criação, listagem, leitura, atualização e exclusão de aulas.
  
 ---
 
