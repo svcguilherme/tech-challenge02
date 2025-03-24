@@ -7,7 +7,7 @@ export const authenticateJWT = (req, res, next) => {
   const token = req.header('Authorization');
 
   if (!token) {
-    return res.status(401).json({ error: 'Acesso não permitido, verificar token/acesso' });
+    return res.status(401).json({ error: 'Acesso não permitido, verificar token/acesso!' });
   }
 
   try {
@@ -28,7 +28,7 @@ export const authorizeRoles = (...allowedRoles) => {
     if (!req.user || !allowedRoles.includes(req.user.role)) {
       return res
         .status(403)
-        .json({ error: 'Acesso não permitido: Permissão insuficiente!' });
+        .json({ error: 'Acesso não permitido: Permissão insuficiente!!' });
     }
     next();
   };
