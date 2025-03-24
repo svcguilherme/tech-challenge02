@@ -8,7 +8,7 @@ const routes = express.Router();
 routes.get(
   '/aulas',
   authenticateJWT,
-  authorizeRoles('Professor', 'Aluno'),
+  authorizeRoles('Professor'),
   AulaController.listarAulas,
 );
 

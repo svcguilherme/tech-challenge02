@@ -29,7 +29,7 @@ class UsuarioController {
     } catch (erro) {
       res
         .status(500)
-        .json({ message: `${erro.message} - Falha na requisição!` });
+        .json({ message: `${erro.message} - Falha na requisição!!` });
     }
   }
 
@@ -48,7 +48,7 @@ class UsuarioController {
     } catch (erro) {
       res
         .status(500)
-        .json({ message: `${erro.message} - Falha ao criar usuário.` });
+        .json({ message: `${erro.message} - Falha ao criar usuário!` });
     }
   }
 

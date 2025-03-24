@@ -43,7 +43,7 @@ describe('AulaController', () => {
 
     it('Deve lidar com erros em postarAula', async () => {
       req.body = { titulo: 'Nova Aula', autor: '456' };
-      usuario.findById.mockRejectedValue(new Error('Erro ao buscar usuário'));
+      usuario.findById.mockRejectedValue(new Error('Erro ao buscar usuário!!'));
 
       await AulaController.postarAula(req, res);
 

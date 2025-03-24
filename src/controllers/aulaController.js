@@ -18,7 +18,9 @@ class AulaController {
   static async buscarAulaPorId(req, res) {
     try {
       const id = req.params.id;
-      const aulaEncontrada = await aula.findById(id);
+      const aulaEncontrada = await aula
+      .findById(id)
+      .select('titulo disciplina conteudo autor.nome');
       res.status(200).json(aulaEncontrada);
     } catch (erro) {
       res
