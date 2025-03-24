@@ -18,7 +18,7 @@ describe('AulaController', () => {
   });
 
   describe('postarAula', () => {
-    it('Deve criar e retornar uma nova aula com o nome do autor embedado', async () => {
+    it('Deve criar e retornar uma nova aula com o nome do autor embedado!!!', async () => {
       req.body = { titulo: 'Nova Aula', autor: '456' };
 
       const mockUsuario = { _doc: { nome: 'João' } };
