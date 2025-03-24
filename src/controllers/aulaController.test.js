@@ -1,7 +1,6 @@
 import AulaController from './aulaController.js';
 import aula from '../models/Aula.js';
-import * as Usuario from '../models/Usuario.js';
-
+import {usuario} from '../models/Usuario.js';
 
 jest.mock('../models/Aula.js');
 jest.mock('../models/Usuario.js');
