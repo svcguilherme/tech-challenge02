@@ -29,7 +29,7 @@ class UsuarioController {
     } catch (erro) {
       res
         .status(500)
-        .json({ message: `${erro.message} - Falha na requisição!` });
+        .json({ message: `${erro.message} - Falha na requisição!!` });
     }
   }
 
